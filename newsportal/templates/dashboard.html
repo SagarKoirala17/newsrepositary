@@ -1,0 +1,18 @@
+{%extends 'base/base.html' %}
+{% block 'title' %} Dashboard {% endblock %}
+{% block 'body' %}
+
+<div class="container">
+       {% include 'component/sidenav.html' %}
+    <div class="col-md-9">
+       {% include 'component/message.html' %}
+        {% for b in blog %}
+        <h3>{{b.title}}</h3>
+        <p>{{b.description |truncatewords:100}}</p>
+        <a href="{% url 'edit_post' b.id %}" class="btn btn-success">Edit</a>
+        <a href="{% url 'delete_post' b.id %}" class="btn btn-danger">Delete</a>
+        <hr/>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

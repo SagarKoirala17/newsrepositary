@@ -1,0 +1,18 @@
+{% extends 'base/base.html' %}
+{% block 'title' %} view more{% endblock %}
+{% block 'body' %}
+<div class="container">
+    <div class=""row">
+    <h3>{{blog.title}}</h3>
+    <div class="col-md-6">
+
+
+<img src="{{MEDIA_URL}} {{blog.image.url}}" height="50%" width="50%">
+    </div>
+    <p>
+        {{blog.description}}
+    </p>
+</div>
+</div>
+{% endblock %}
+

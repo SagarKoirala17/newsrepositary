@@ -1,0 +1,28 @@
+{% extends 'base/base.html' %}
+{% block 'title' %} Login {% endblock %}
+{% block 'body' %}
+
+<div class="container">
+    <div class=""row">
+    <div class="col-md-6 col-md-offset-3">
+        {% include 'component/message.html' %}
+        <form method="post">
+            <div class="input-group">
+                <label>Username</label>
+                <input type="text" class="form-control" name="username">
+            </div>
+
+                 <div class="input-group">
+                <label>Password</label>
+                <input type="text" class="form-control" name="pass">
+            </div>
+
+            {% csrf_token %}
+            <button type="submit" class="btn btn-primary">Login</button>
+
+
+        </form>
+    </div>
+    </div>
+</div>
+{% endblock %}

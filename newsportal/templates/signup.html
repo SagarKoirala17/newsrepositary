@@ -1,0 +1,33 @@
+{% extends 'base/base.html' %}
+{% block 'title' %} Signup {% endblock %}
+{% block 'body' %}
+<div class="container">
+    <div class=""row">
+    <div class="col-md-6 col-md-offset-3">
+        {% include 'component/message.html' %}
+        <form method="post">
+            <div class="input-group">
+                <label>Username</label>
+                <input type="text" class="form-control" name="username">
+            </div>
+                 <div class="input-group">
+                <label>Email</label>
+                     <input type="text" class="form-control" name="email">
+            </div>
+                 <div class="input-group">
+                <label>Password</label>
+                <input type="text" class="form-control" name="pass">
+            </div>
+                 <div class="input-group">
+                <label>Confirm Password</label>
+                <input type="text" class="form-control" name="pass1">
+            </div>
+            {% csrf_token %}
+            <button type="submit" class="btn btn-primary">Submit</button>
+
+
+        </form>
+    </div>
+    </div>
+</div>
+{% endblock %}
